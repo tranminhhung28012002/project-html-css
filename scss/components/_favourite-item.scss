@@ -1,0 +1,55 @@
+@use "../abtracts";
+
+.favourite-item{
+   display: flex;
+   gap: 20px;
+
+    &__thumb{
+        width: 110px;
+        object-fit: contain;
+        @include abtracts.screen(lg){
+            width: 80px;
+        }
+    }
+
+    &__title{
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 146.667%;
+    }
+
+    &__content{
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @include abtracts.screen(md){
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+            
+        }
+    }
+
+    &__price{
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 145.455%;
+
+        @include abtracts.screen(lg){
+            font-size: 18px;
+          
+        }
+    }
+
+    &__separate{
+        height: 1px;
+        background: var(--separate-bg);
+        margin: 20px 0px;
+
+        @include abtracts.screen(lg){
+            margin: 16px 0px;
+        }
+    }
+}

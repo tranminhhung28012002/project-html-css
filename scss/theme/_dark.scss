@@ -1,0 +1,93 @@
+@use "../abtracts";
+html.dark{
+    --text-color:#fff;
+    --icon-color: brightness(0) saturate(100%) invert(99%) sepia(1%) 
+        saturate(2%) hue-rotate(153deg) brightness(108%) contrast(100%);
+    --topbar-bg-color:#171C28;    
+    --body-bg:#292E39;
+    @include abtracts.screen(sm){
+        --body-bg:#292E39;
+    }
+
+    --header-shadown : 0px 40px 90px 20px rgba(10, 13, 18, 0.4);
+    --header-bg-color:#171C28;
+    --top-act-group-bg-color:#292E39;
+    --top-act-group-shadow:rgba(0, 0, 0, 0.20);
+    --top-act-group-separate:#EDEDF6;
+    --header-shadow-color:rgba(237, 237, 246, 0);
+    @include abtracts.screen(lg){
+        --header-bg-color:#171C28;
+        --header-shadow-color:rgba(237, 237, 246, 0);
+    }
+    
+    //DropDown
+    --dropdown-bg-color: #2f3441;
+    --Secondary-Color-Background: #292E39;
+    --dropdown-shadow-bg:rgba(23, 28, 40, 0.40);
+    --dropdrown-arrow-color: brightness(0) saturate(100%) 
+    invert(19%) sepia(6%) saturate(1833%) hue-rotate(186deg) brightness(95%) contrast(93%);
+
+    --top-menu-boder-color:#171C28;
+    --menu-column-icon-color: brightness(0) saturate(100%) invert(100%) sepia(23%) saturate(2935%) 
+                    hue-rotate(206deg) brightness(110%) contrast(97%);
+
+    //slidebar
+    --slidebar-title:#FFFFFF;
+    --slidebar-bg:#292E39;          
+    
+    --cate-item-bg:#171C28;
+    --cate-item-bg-thumb:#292E39;
+
+    //filter
+    --filter-btn-color:#171C28;
+    --filter-title-color:#FFFFFF;
+
+    //product
+    --product-bg-color:#171C28;
+    --product-sd-bg:rgba(0, 0, 0, 0.20);
+    --like-btn-sd:rgba(124, 124, 124, 0.20);
+
+    //filter form
+    --filter-form-bg:#292E39;
+    --filter-form-shadow:rgba(0, 0, 0, 0.40);
+    --filter-arrow-bg:var(--dropdrown-arrow-color);
+
+    //footer
+    --footer-bg-color: var(--header-bg-color);
+    --footer-text-color: #9e9da6;
+
+    //auth
+    --auth-content-bg:#292E39;
+    --auth-color:#B9BABE;
+    --btn-color:#1A162E;
+    --auth-intro-bg:#171C28;
+
+    //product-detail
+    --product-detail-bg: #292e39;
+
+    --breadcrmbs-bg: #171C28;
+    --breadcrmbs-shadow: rgba(0, 0, 0, 0.2);
+
+    --prod-tag-bg:#292E39;
+    //prod info
+    --prod-info-bg:#171C28;
+    @include abtracts.screen(sm){
+        --prod-info-bg:#171C28;
+        --prod-tag-bg:#171C28;
+    }
+
+    --dropdown-item-color:#B9BABE;
+    --dropdown-arrow-color:#292E39:
+
+    --gift-bg:#292E39;
+
+    --dialog-bg: #2f3441;
+    --dialog-shadow: rgba(23, 28, 40, 0.4);
+    --separate-bg:#292E39;
+
+    --cancel-color:#B9BABE;
+
+    --profile-info-bg:#171C28;
+
+    --form--icon-bg:#2f3441;
+}

@@ -1,0 +1,185 @@
+@use "../abtracts";
+
+
+.dropdown {
+ 
+    position: absolute;
+    left: 0;
+    width: min(1270px, 100%);
+    padding-top: 54px;
+    display: none;
+    @include abtracts.screen(lg){
+        padding-top: 0;
+        position: initial;
+    }
+
+
+    &__inner {
+        z-index: 1;
+        --inner-padding: 30px;
+        position: relative;
+        padding: var(--inner-padding);
+        border-radius: 20px;
+        background: var(--dropdown-bg-color);
+        box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-bg);
+        &::before {
+            content: url("../icon/dropdown.svg");
+            position: absolute;
+            top: -13px;
+            left: var(--arrow-left-pos);
+            translate: -50%;
+            filter: var(--dropdown-arrow-color);
+        }
+        
+        @include abtracts.screen(lg){
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+            padding-left: 0;
+            padding: 10px 0px;
+            &::before{
+                content: none;
+            }
+        }
+        @include abtracts.screen(sm) {
+            padding: 0 20px;
+        }
+    }
+}
+
+.top-menu {
+    max-height: calc(var(--inner-max-height) - var(--inner-padding) * 2);
+    --max-height:calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+    --main-column-width: 292px;
+    position: relative;
+    &__main {
+        width: 292px;
+        width: var(--main-column-width);
+        height: var(--max-height);
+        border-right: 1px solid var(--top-menu-boder-color);
+        overflow-y: auto;
+
+        @include abtracts.screen(lg){
+            width: 100%;
+            height: auto;
+            border-right: none;
+        }
+    }
+}
+
+.menu-column{
+    display: flex;
+    gap: 14px;
+    +.menu-column{
+        margin-top: 20px;
+    }
+    &__icon{
+        flex-shrink: 0;
+        position: relative;
+        width: 36px;
+        height: 36px;
+        // @include abtracts.screen(xl){
+        //     display: none;
+        // }
+
+        // @include abtracts.screen(lg){
+        //     display: block;
+        // }
+    }
+
+    &__icon-1{
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+    }
+    &__icon-2{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        right: 0;
+        bottom: 0;
+        filter: var(--menu-column-icon-color);
+    }
+
+    &__content{
+        flex: 1;
+    }
+
+    &__heading{
+        color: var(--text-color);
+        font-size: 1.6rem;
+        line-height: 150%;
+        margin-top: 4px;
+        font-weight: 500;
+        @include abtracts.screen(lg){
+            margin-bottom: 26px;
+        }
+    }
+
+    &__list {
+        margin-top: 19px;
+        @include abtracts.screen(lg){
+            margin-top: 20px;
+        }
+    }
+
+
+    &__item{
+            &--active .sub-menu{
+                display: grid;
+            }
+    }
+
+    &__item--active > &__link,
+    &__item:hover > &__link {
+        color: #0071dc;
+        font-weight: 500;
+    }
+
+    &__link {
+        display: block;
+        padding: 7px 0;
+        font-size: 1.4rem;
+        line-height: 142.857%;
+
+        @include abtracts.screen(lg){
+            font-weight: 400;
+        }
+    }
+
+}
+.sub-menu {
+    position: absolute;
+    inset: 0 0 0 var(--main-column-width);
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--inner-padding);
+    padding-left: var(--inner-padding);
+    overflow-y: auto;
+
+    @include abtracts.screen(lg){
+        position: initial;
+        grid-template-columns: 1fr;
+        padding-left: 0;
+        margin-top: 14px;
+    }
+
+
+    &--not-main{
+        position: initial;
+        inset: initial;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        height: var(--max-height);
+        padding-left:0 ;
+
+        @include abtracts.screen(lg){
+            grid-template-columns: 1fr;
+            height: auto;
+        }
+    }
+}
+
+
+

@@ -1,0 +1,151 @@
+@use "../abtracts";
+
+.pay-info{
+    
+    &__heading{
+        font-size: 22px;
+        font-weight: 500;
+        line-height:  145.455%;
+
+        &-bottom{
+            padding-bottom: 30px;
+            border-bottom: 1px solid #D2D1D6;
+        }
+    }
+    &__title{
+        margin-top: 30px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 144.444% ;
+    }
+    &__checkbox{
+        display: flex;
+        width: 30px;
+        height: 30px;
+        padding: 4.583px;
+        justify-content: center;
+        align-items: center;
+            
+    }
+
+    &__bg{
+        margin-top: 30px;
+        background: var(--prod-info-bg);
+        padding: 20px;
+        border-radius: 20px;
+
+        @include abtracts.screen(sm){
+            background: var(--body-bg);
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-start{
+            @include abtracts.screen(sm){
+                align-items: flex-start;
+            }
+        }
+    }
+
+
+    &__detail{
+        align-items: center;
+
+        @include abtracts.screen(sm){
+            align-items: baseline;
+        }
+    }
+
+    &__shipper{
+        width: 75px;
+        height: 54px;
+        object-fit: contain;
+        border-radius: 10px;
+
+        @include abtracts.screen(sm){
+           
+        }
+    }
+
+    &__free{
+        font-size: 18px;
+        font-weight: 500;
+        line-height:144.444%;
+        text-align: right;
+
+        &-price{
+            color: #9E9DA8;
+        }
+    }
+
+    &__form{
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 144.444%;
+
+        &-separate{
+            width: 1px;
+            height: 26px;
+            background: #D2D1D6;
+            margin-right: 12px;
+            margin-left: 12px ;
+        }
+
+        &-input{
+            
+        }
+    }
+
+
+    &__margin{
+        margin-top: 16px;
+    }
+   
+}
+
+.pay-info__checkbox {
+    display: none;
+}
+
+/* Style the custom checkbox */
+.custom-checkbox {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* Change the color of the custom checkbox when checked */
+.pay-info__checkbox:checked + .custom-checkbox {
+    background-color: #67B044;
+    border-color: #F6F6F6;
+}
+
+#pay-info__ticked{
+    width: 18px;
+    height: 18px;
+    accent-color: #67B044;
+}
+
+.pay-filter{
+    margin-top: 30px;
+}
+
+.pay-cart{
+    margin-top: 30px;
+}
+
+.pay-btn{
+    min-height: 68px;
+    font-size: 22px;
+    font-weight: 500;
+    line-height:  145.455%;
+}

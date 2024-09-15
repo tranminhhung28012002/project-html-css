@@ -1,0 +1,169 @@
+@use "../abtracts";
+
+.auth{
+    display: flex;
+    min-height: 100vh;
+    &__intro, &__content{
+        flex:1;
+        padding: 0 30px;
+    }
+
+    &__intro{
+       
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 50px;
+        background: var(--auth-intro-bg);
+        &-img{
+            width: var(--width);
+            max-width: 100%;
+            
+            
+            object-fit: cover;
+            border-radius: 10px;
+
+            @include abtracts.screen(md){
+               margin-top: 25%;
+            }
+
+            @include abtracts.screen(sm){
+                margin-top: 50%;
+            }
+        }
+        &-logo{
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            translate: -50% 0;
+            display: none;
+            @include abtracts.screen(md){
+                display: inherit;
+                margin: 0;
+            }
+
+           
+        }
+
+    
+
+        &-text{
+            max-width: 412px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 144.444%;
+            text-align: center;
+        }
+    }
+
+    &__message{
+        margin-top: 30px;
+    }
+
+    &__content{
+        background: var(--auth-content-bg);
+        
+        @include abtracts.screen(md){
+            &.hide{
+                translate: 100%;
+            }
+
+            &-back{
+                position: absolute;
+                left: 10%;
+            }
+
+            &-logo{
+                margin: 0;
+            }
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            overflow-y: auto;
+            transition: translate 0.3s;
+        }
+
+        
+
+        &-inner{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: min(460px,100%);
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+    }
+    &__heading{
+        margin-top: 50px;
+        font-size: 30px;
+        font-weight: 500;
+        line-height:  146.667%;
+        color: var(--auth-color);
+
+        @include abtracts.screen(md){
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 145.455%;
+        }
+    }
+
+    &__desc{
+        margin-top: 10px;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 146.667%;
+        color: #9E9DA8;
+    }
+
+    &__form{
+        width: 100%;
+        margin-top: 60px;
+
+        &-forgot{
+            margin-top: 10px;
+        }
+    }
+
+    &__link{
+        color: #0071DC;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 146.667%;
+    }
+
+    &__btn-group{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__btn{
+        width: 100%; 
+    }
+
+    &__text{
+        margin-top: 100px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height:  144.444%;
+    }
+
+    &__sms{
+        margin-top: 25px;
+    }
+}
+
+.btn{
+    &-primary{
+        color: var(--btn-color);
+    }
+
+    &-outline{
+        color: var(--auth-color);
+    }
+}

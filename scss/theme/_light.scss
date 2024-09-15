@@ -1,0 +1,95 @@
+@use "../abtracts";
+html{
+    --text-color:#1a162e;
+    --icon-color: brightness(0) saturate(100%) invert(8%) sepia(7%) 
+        saturate(6164%) hue-rotate(213deg) brightness(98%) contrast(95%);
+    --topbar-bg-color:#EEE;    
+    --header-bg-color:#eee;
+    --body-bg:#F6F6F6;
+    @include abtracts.screen(md){
+        --body-bg:#f6f6f6;
+    }
+    --header-shadown : 0px 40px 90px 20px rgba(200, 200, 200, 0.40);
+    --top-act-group-bg-color:#FFFFFF;
+    --top-act-group-shadow:rgba(237, 237, 246, 0.20);
+    --top-act-group-separate:#ededf6;
+    
+    
+    //DropDown
+    
+    --Secondary-Color-Background: #FFF;
+    --dropdown-shadow-bg:rgba(0, 0, 0, 0.20);
+    @include abtracts.screen(lg){
+        --header-bg-color:#fff;
+        --header-shadow-color:rgba(237, 237, 246, 0.20);
+    }
+    --dropdown-arrow-color:#fff;
+    --dropdown-bg-color: #fff;
+    --top-menu-boder-color:#D2D1D6;
+    --menu-column-icon-color:brightness(0) saturate(100%) invert(8%) sepia(11%) 
+    saturate(3969%) hue-rotate(212deg) brightness(97%) contrast(95%);
+    //sidebar
+    --slidebar-bg:#FFFFFF;
+    --slidebar-title:#1A162E;
+    --icon:#FFFFFF;
+
+    //container-home
+    --cate-item-bg:#EEE;
+    @include abtracts.screen(sm){
+        --cate-item-bg:#fff;
+    }
+    --cate-item-bg-thumb:#FFf;
+
+    //filter 
+    --filter-btn-color:#FFFFFF;
+    --filter-title-color:#6C6C72;
+
+    //product 
+    --product-bg-color:#FFFFFF;
+    --product-sd-bg:rgba(237, 237, 246, 0.20);
+    --like-btn-sd:rgba(124, 124, 124, 0.20);
+
+    //filter form
+    --filter-form-bg:#fff;
+    --filter-form-shadow:rgba(200, 200, 200, 0.40);
+
+    //footer
+    --footer-bg-color: var(--header-bg-color);
+
+    --auth-content-bg:#fff;
+    --auth-color:#1A162E;
+
+    //product-page
+    --product-detail-bg: #fff5;
+
+    --breadcrmbs-bg: #f6f6f6;
+    
+    --breadcrmbs-shadow: rgba(237, 237, 246, 0.2);
+
+    //prod info
+    --prod-info-bg:#f6f6f6;
+    @include abtracts.screen(sm){
+        --prod-info-bg:#fff;
+        --breadcrmbs-bg:#fff;
+        --prod-tag-bg:#EDEDF6;
+    }
+
+    @include abtracts.screen(lg){
+        --breadcrmbs-bg:#fff;
+        
+    }
+
+    --dropdown-item-color:#1A162E;
+    --gift-bg:#7644E1;
+
+    --dialog-bg: #fff;
+    --dialog-shadow: rgba(237, 237, 246, 0.2);
+
+    --separate-bg:#D2D1D6;
+
+    --cancel-color:#1A162E;
+
+    --profile-info-bg:#FFF;
+    
+    --form--icon-bg:#f6f6f6;
+}

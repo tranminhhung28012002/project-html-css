@@ -1,0 +1,47 @@
+.account-info{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    
+    gap: 10px;
+    border-radius: 10px;
+    background: var(--body-bg);
+
+
+    &__icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 54px;
+        height: 54px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        background: var(--auth-content-bg);
+    }
+
+    &__title{
+        font-size: 15px;
+        font-weight: 500;
+        line-height:146.667%;
+    }
+
+    &__desc{
+        margin-top: 6px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 142.857%;
+    }
+
+    &__right{
+        flex: 1;
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    &__edit{
+        cursor: pointer;
+    }
+
+    
+}

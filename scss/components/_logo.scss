@@ -1,0 +1,34 @@
+@use "../abtracts";
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    @include abtracts.screen(lg){
+        gap: 10px;
+        margin-left: 40px;
+    }
+    @include abtracts.screen(sm){
+        margin-left: 0;
+    }
+   
+    
+    &__title{
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 145.455%;
+
+    @include abtracts.screen(lg){
+        font-size: 1.8rem;
+    }
+
+
+    }
+    &__img{
+        @include abtracts.screen(lg){
+            width: 24px;
+        }
+    }
+}

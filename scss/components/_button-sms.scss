@@ -1,0 +1,550 @@
+.ui-wrapper {
+  --width: 250px;
+  --height: 50px;
+  --background: #fff;
+  --text-color: rgb(73, 73, 73);
+  --border-color: rgb(185, 184, 184);
+  --border-focus-color: rgb(0, 110, 255);
+  --shadow-color: rgba(34, 60, 80, 0.2);
+  --shadow-focus-color: rgba(0, 110, 255, 0.2);
+  --dropdown-button-color: #e6e6e6;
+  --dropdown-button-hover-color: #dad9d9;
+  
+}
+
+.ui-wrapper *,
+.ui-wrapper *::before,
+.ui-wrapper *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: var(--text-color);
+}
+
+.ui-wrapper {
+  margin-top: 20px;
+  width: var(--width);
+  height: var(--height);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 10px;
+  position: relative;
+  border: 1px solid var(--border-color);
+  background-color: var(--background);
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-right: 10px;
+  -webkit-box-shadow: 0px 2px 5px 0px var(--shadow-color);
+  box-shadow: 0px 2px 5px 0px var(--shadow-color);
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+
+.ui-wrapper>input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  left: 9999px;
+}
+
+.sms-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+  border-radius: 9px 0 0 9px;
+  background-color: var(--dropdown-button-color);
+}
+
+.sms-container::before {
+  font-size: 20px;
+  background: none !important;
+}
+
+.sms-container-icon::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-position: center;
+  background-size: cover;
+  margin-left: 5px;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
+}
+
+.select-wrapper {
+  width: var(--width);
+  position: absolute;
+  top: calc(var(--height) + 20px);
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
+}
+
+.select-wrapper ul {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0;
+  list-style: none;
+  height: 300px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  white-space: nowrap;
+}
+
+.select-wrapper ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.phone{
+  width: 100px;
+}
+
+.phone-text{
+  font-size: 1.4rem;
+}
+
+.select-wrapper ul li label {
+  width: 100%;
+}
+
+.select-wrapper ul li,
+.select-wrapper ul li * {
+  cursor: pointer;
+}
+
+.select-wrapper ul li:hover {
+  background: lightgray;
+}
+
+.select-wrapper ul li span {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.input-wrapper {
+  width: 100%;
+  padding-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  row-gap: 2px;
+}
+
+.input-wrapper legend {
+  font-size: 11px;
+}
+
+.input-wrapper .textfield {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.input-wrapper .textfield::before {
+  content: "+31";
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+.input-wrapper .textfield input {
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.invalid-msg {
+  font-size: 12px;
+  position: absolute;
+  color: red;
+  top: 115%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
+}
+
+/* actions */
+
+#phonenumber:invalid+.invalid-msg {
+  top: 110%;
+  opacity: 1;
+  visibility: visible;
+}
+
+.ui-wrapper:focus-within {
+  border-color: var(--border-focus-color);
+  -webkit-box-shadow: 0px 2px 5px 0px var(--shadow-focus-color);
+  box-shadow: 0px 2px 5px 0px var(--shadow-focus-color);
+}
+
+.sms-container:hover {
+  background-color: var(--dropdown-button-hover-color);
+}
+
+.sms-checkbox:checked~.select-wrapper {
+  top: calc(var(--height) + 5px);
+  opacity: 1;
+  visibility: visible;
+}
+
+.sms-checkbox:checked+.sms-container::after {
+  rotate: 180deg;
+  translate: 0 -2px;
+}
+
+.ui-wrapper input#austria:checked~.sms-container::before,
+.ui-wrapper input#austria:checked~.select-wrapper li.austria {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#belgium:checked~.sms-container::before,
+.ui-wrapper input#belgium:checked~.select-wrapper li.belgium {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#bulgaria:checked~.sms-container::before,
+.ui-wrapper input#bulgaria:checked~.select-wrapper li.bulgaria {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#croatia:checked~.sms-container::before,
+.ui-wrapper input#croatia:checked~.select-wrapper li.croatia {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#cyprus:checked~.sms-container::before,
+.ui-wrapper input#cyprus:checked~.select-wrapper li.cyprus {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#czech:checked~.sms-container::before,
+.ui-wrapper input#czech:checked~.select-wrapper li.czech {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#denmark:checked~.sms-container::before,
+.ui-wrapper input#denmark:checked~.select-wrapper li.denmark {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#estonia:checked~.sms-container::before,
+.ui-wrapper input#estonia:checked~.select-wrapper li.estonia {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#finland:checked~.sms-container::before,
+.ui-wrapper input#finland:checked~.select-wrapper li.finland {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#france:checked~.sms-container::before,
+.ui-wrapper input#france:checked~.select-wrapper li.france {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#germany:checked~.sms-container::before,
+.ui-wrapper input#germany:checked~.select-wrapper li.germany {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#greece:checked~.sms-container::before,
+.ui-wrapper input#greece:checked~.select-wrapper li.greece {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#hungary:checked~.sms-container::before,
+.ui-wrapper input#hungary:checked~.select-wrapper li.hungary {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#iceland:checked~.sms-container::before,
+.ui-wrapper input#iceland:checked~.select-wrapper li.iceland {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#ireland:checked~.sms-container::before,
+.ui-wrapper input#ireland:checked~.select-wrapper li.ireland {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#italy:checked~.sms-container::before,
+.ui-wrapper input#italy:checked~.select-wrapper li.italy {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#latvia:checked~.sms-container::before,
+.ui-wrapper input#latvia:checked~.select-wrapper li.latvia {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#liechtenstein:checked~.sms-container::before,
+.ui-wrapper input#liechtenstein:checked~.select-wrapper li.liechtenstein {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#lithuania:checked~.sms-container::before,
+.ui-wrapper input#lithuania:checked~.select-wrapper li.lithuania {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#luxembourg:checked~.sms-container::before,
+.ui-wrapper input#luxembourg:checked~.select-wrapper li.luxembourg {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#malta:checked~.sms-container::before,
+.ui-wrapper input#malta:checked~.select-wrapper li.malta {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#netherlands:checked~.sms-container::before,
+.ui-wrapper input#netherlands:checked~.select-wrapper li.netherlands {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#norway:checked~.sms-container::before,
+.ui-wrapper input#norway:checked~.select-wrapper li.norway {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#poland:checked~.sms-container::before,
+.ui-wrapper input#poland:checked~.select-wrapper li.poland {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#portugal:checked~.sms-container::before,
+.ui-wrapper input#portugal:checked~.select-wrapper li.portugal {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#romania:checked~.sms-container::before,
+.ui-wrapper input#romania:checked~.select-wrapper li.romania {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#slovakia:checked~.sms-container::before,
+.ui-wrapper input#slovakia:checked~.select-wrapper li.slovakia {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#slovenia:checked~.sms-container::before,
+.ui-wrapper input#slovenia:checked~.select-wrapper li.slovenia {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#spain:checked~.sms-container::before,
+.ui-wrapper input#spain:checked~.select-wrapper li.spain {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#sweden:checked~.sms-container::before,
+.ui-wrapper input#sweden:checked~.select-wrapper li.sweden {
+  content: "";
+  background-color: lightgray;
+}
+
+.ui-wrapper input#austria:checked~.input-wrapper .textfield::before {
+  content: "+43";
+}
+
+.ui-wrapper input#belgium:checked~.input-wrapper .textfield::before {
+  content: "+32";
+}
+
+.ui-wrapper input#bulgaria:checked~.input-wrapper .textfield::before {
+  content: "+359";
+}
+
+.ui-wrapper input#croatia:checked~.input-wrapper .textfield::before {
+  content: "+385";
+}
+
+.ui-wrapper input#cyprus:checked~.input-wrapper .textfield::before {
+  content: "+357";
+}
+
+.ui-wrapper input#czech:checked~.input-wrapper .textfield::before {
+  content: "+420";
+}
+
+.ui-wrapper input#denmark:checked~.input-wrapper .textfield::before {
+  content: "+45";
+}
+
+.ui-wrapper input#estonia:checked~.input-wrapper .textfield::before {
+  content: "+372";
+}
+
+.ui-wrapper input#finland:checked~.input-wrapper .textfield::before {
+  content: "+358";
+}
+
+.ui-wrapper input#france:checked~.input-wrapper .textfield::before {
+  content: "+33";
+}
+
+.ui-wrapper input#germany:checked~.input-wrapper .textfield::before {
+  content: "+49";
+}
+
+.ui-wrapper input#greece:checked~.input-wrapper .textfield::before {
+  content: "+30";
+}
+
+.ui-wrapper input#hungary:checked~.input-wrapper .textfield::before {
+  content: "+36";
+}
+
+.ui-wrapper input#iceland:checked~.input-wrapper .textfield::before {
+  content: "+354";
+}
+
+.ui-wrapper input#ireland:checked~.input-wrapper .textfield::before {
+  content: "+353";
+}
+
+.ui-wrapper input#italy:checked~.input-wrapper .textfield::before {
+  content: "+39";
+}
+
+.ui-wrapper input#latvia:checked~.input-wrapper .textfield::before {
+  content: "+371";
+}
+
+.ui-wrapper input#liechtenstein:checked~.input-wrapper .textfield::before {
+  content: "+423";
+}
+
+.ui-wrapper input#lithuania:checked~.input-wrapper .textfield::before {
+  content: "+370";
+}
+
+.ui-wrapper input#luxembourg:checked~.input-wrapper .textfield::before {
+  content: "+352";
+}
+
+.ui-wrapper input#malta:checked~.input-wrapper .textfield::before {
+  content: "+356";
+}
+
+.ui-wrapper input#netherlands:checked~.input-wrapper .textfield::before {
+  content: "+31";
+}
+
+.ui-wrapper input#norway:checked~.input-wrapper .textfield::before {
+  content: "+47";
+}
+
+.ui-wrapper input#poland:checked~.input-wrapper .textfield::before {
+  content: "+48";
+}
+
+.ui-wrapper input#portugal:checked~.input-wrapper .textfield::before {
+  content: "+351";
+}
+
+.ui-wrapper input#romania:checked~.input-wrapper .textfield::before {
+  content: "+40";
+}
+
+.ui-wrapper input#slovakia:checked~.input-wrapper .textfield::before {
+  content: "+421";
+}
+
+.ui-wrapper input#slovenia:checked~.input-wrapper .textfield::before {
+  content: "+386";
+}
+
+.ui-wrapper input#spain:checked~.input-wrapper .textfield::before {
+  content: "+34";
+}
+
+.ui-wrapper input#sweden:checked~.input-wrapper .textfield::before {
+  content: "+46";
+}
